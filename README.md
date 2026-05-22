@@ -13,7 +13,7 @@ Department of Electrical Engineering, IIT Ropar
 
 ---
 
-## 🧠 Overview
+## Overview
 
 This project addresses **real-time transient stability assessment (TSA)** in power systems — determining whether synchronous generators will maintain synchronism after a large disturbance (fault, line outage, etc.).
 
@@ -32,7 +32,7 @@ The model is **556× faster** than classical TSA methods while missing zero unst
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Input Window (T=50 timesteps × F features)
@@ -64,38 +64,7 @@ Input Window (T=50 timesteps × F features)
 
 ---
 
-## 📁 Repository Structure
 
-```
-├── tsa_pipeline.py                      # Complete end-to-end pipeline (single script):
-│                                        #   data loading → outlier removal → feature selection
-│                                        #   → physics-informed windowing → normalisation
-│                                        #   → model build → training → threshold sweep
-│                                        #   → evaluation → all plots saved
-│
-├── results/
-│   ├── architecture.png                 # End-to-end workflow diagram (Fig. 1 from paper)
-│   ├── roc_curve.png                    # ROC curve on test set
-│   ├── confusion_matrix.png             # Confusion matrix at chosen threshold
-│   ├── preprocessing_analysis.png       # 4-panel: class distribution, splits, post-fault
-│   │                                    #   sample histogram, window-level counts
-│   ├── imd_feature_analysis.png         # IMD discriminability scores per feature group
-│   ├── spearman_feature_analysis.png    # Absolute Spearman inter-group correlation heatmap
-│   ├── threshold_metrics_analysis.png   # Val Accuracy / Precision / Recall / F1 vs threshold
-│   ├── threshold_probability_analysis.png # Val predicted-probability distributions
-│   │                                    #   (stable vs unstable) with chosen threshold line
-│   ├── feature_group_accuracy_curve.png # Ablation: line plot of metrics across 4 feature combos
-│   └── feature_group_accuracy_comparison.png # Ablation: bar chart of accuracy per combo
-│
-├── feature_group_ablation.csv           # Ablation results: accuracy, F1, FAR per feature combo
-├── feature_group_selection_table.csv    # IMD + Spearman pruning decisions per group
-├── unstable_detection_times.csv         # Per-simulation: first window where instability detected,
-│                                        #   detection time in seconds (at 0.02s sample interval)
-├── bilstm_transformer.keras             # Saved trained model (TensorFlow/Keras format)
-│
-├── requirements.txt                     # Python dependencies
-└── README.md                            # This file
-```
 
 > **Note on dataset files:** The raw simulation CSVs and `metadata_master_with_TSI_filtered.csv` are not included in this repository due to size. Update the `folder_path` and `meta_path` variables at the top of `tsa_pipeline.py` to point to your local dataset directory before running.
 
@@ -217,28 +186,8 @@ All output plots, CSVs, and the saved model (`bilstm_transformer.keras`) will be
 
 ---
 
-## 📦 Requirements
 
-```
-tensorflow>=2.9.0
-numpy>=1.21.0
-pandas>=1.3.0
-scikit-learn>=1.0.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-scipy>=1.7.0
-```
 
----
-
-## 🔭 Future Work
-
-- Physics-informed loss incorporating swing equation residual (Mδ̈ + Dδ̇ = Pm − Pe)
-- Continual online learning to adapt as new fault events are recorded
-- Multi-label output: fault type + stability margin + binary label
-- Model compression via knowledge distillation for substation-level embedded hardware
-
----
 
 ## 📚 Citation
 
