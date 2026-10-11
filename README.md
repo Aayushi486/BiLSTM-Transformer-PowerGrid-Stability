@@ -1,11 +1,11 @@
 # BiLSTM-Transformer-PowerGrid-Stability
-# ⚡ Transient Stability Assessment Using Hybrid BiLSTM–Transformer Architecture
+# Transient Stability Assessment Using Hybrid BiLSTM–Transformer Architecture
 
 > A deep-learning framework for real-time power system transient stability classification using physics-informed post-fault windowing, parallel gated fusion, and focal loss.
 
 ---
 
-## 📄 Paper
+## Paper
 
 **"Transient Stability Assessment of Power Systems Using a Hybrid BiLSTM–Transformer Architecture with Focal Loss and Physics-Informed Post-Fault Windowing"**  
 Aayushi Jindal, Shreya Jaiswal, Saurabh Verma, Bibhu Prasad Padhy  
@@ -163,7 +163,7 @@ Reports Accuracy, Precision, Recall, F1, ROC-AUC, PR-AUC, Balanced Accuracy, MCC
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Install dependencies
 ```bash
@@ -189,22 +189,19 @@ All output plots, CSVs, and the saved model (`bilstm_transformer.keras`) will be
 
 
 
-## 📚 Citation
+## Conference Publication
+
+This work has been accepted for presentation at the **National Power Systems Conference (NPSC 2026)**.
+
+### Citation
 
 If you use this work, please cite:
 
 ```bibtex
-@article{jindal2024tsa,
-  title={Transient Stability Assessment of Power Systems Using a Hybrid BiLSTM–Transformer Architecture
-         with Focal Loss and Physics-Informed Post-Fault Windowing},
+@inproceedings{jindal2026tsa,
+  title={Transient Stability Assessment of Power Systems Using a Hybrid BiLSTM--Transformer Architecture with Focal Loss and Physics-Informed Post-Fault Windowing},
   author={Jindal, Aayushi and Jaiswal, Shreya and Verma, Saurabh and Padhy, Bibhu Prasad},
   institution={Department of Electrical Engineering, IIT Ropar},
-  year={2024}
+  year={2026},
+  note={Accepted for presentation at NPSC 2026}
 }
-```
-
----
-
-## 📜 License
-
-This project is released for academic and research purposes.
